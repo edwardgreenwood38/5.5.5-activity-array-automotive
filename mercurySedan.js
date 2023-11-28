@@ -30,8 +30,9 @@ class Car extends Vehicle {
     loadPassenger(num) {
         if (this.passengers < this.maximumPassengers){
             if(this.passengers + num < this.maximumPassengers) {
-                console.log(this.year + " " + this.nake + " sedan has " + this.passengers + " loaded now");
-                return this.passengers += num;
+                this.passengers += num;
+                console.log(this.year + " " + this.make + " sedan has " + this.passengers + " loaded now");
+                return this.passengers;
             }
             else {
                 let total = this.passengers + num
@@ -82,7 +83,7 @@ let myCar2 = new Car('chevy', 'sedan', '2019', 'silver', 4000)
 
 
 myCar2.start()
-myCar2.loadPassenger(6)
+myCar2.loadPassenger(3)
 myCar2.stop()
 myCar2.checkService()
 
